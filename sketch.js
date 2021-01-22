@@ -62,7 +62,7 @@ background(220);
    stroke("black");
   textSize(20);
   fill("black");
-  text("Score: "+ score, 215,65);
+  text("Score: "+ score, 200,65);
   survivalTime = Math.ceil(frameCount/frameRate());
   text("Survival Time : "+ survivalTime,200,50);
 }
