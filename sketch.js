@@ -2,6 +2,7 @@ var monkey , monkey_running
 var banana ,bananaImage, obstacle, obstacleImage
 var FoodGroup, obstacleGroup
 var survivalTime = 0;
+var score = 0;
 
 function preload(){
   
@@ -53,13 +54,15 @@ background(220);
   
   if(bananaGroup.isTouching(monkey)) {
     bananaGroup[0].destroy();
+    score = score+1;
   }
   
   stroke("black");
   textSize(20);
   fill("black");
   survivalTime = Math.ceil(frameCount/frameRate());
-  text("Survival Time : "+ survivalTime,200,50)
+  text("Survival Time : "+ survivalTime,200,50);
+  text("Score: "+ score, 500,40);
   
   drawSprites();
 }
