@@ -49,7 +49,11 @@ background(220);
     spawnObstacles();
   
   //spawn the clouds
-    spawnClouds();
+    spawnBanana();
+  
+  if(bananaGroup.isTouching(monkey)) {
+    bananaGroup[0].destroy();
+  }
   
   stroke("black");
   textSize(20);
@@ -73,7 +77,7 @@ function spawnObstacles(){
  }
 }
 
-function spawnClouds() {
+function spawnBanana() {
   
   if (frameCount % 120 === 0) {
     var banana = createSprite(600,120,40,10);
