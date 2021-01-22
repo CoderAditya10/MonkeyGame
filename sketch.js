@@ -7,7 +7,7 @@ var score = 0;
 function preload(){
   
   
-  monkey_running =            loadAnimation("sprite_0.png","sprite_1.png","sprite_2.png","sprite_3.png","sprite_4.png","sprite_5.png","sprite_6.png","sprite_7.png","sprite_8.png")
+  monkey_running = loadAnimation("sprite_0.png","sprite_1.png","sprite_2.png","sprite_3.png","sprite_4.png","sprite_5.png","sprite_6.png","sprite_7.png","sprite_8.png")
   
   bananaImage = loadImage("banana.png");
   obstacleImage = loadImage("obstacle.png");
@@ -57,14 +57,14 @@ background(220);
     score = score+1;
   }
   
-  stroke("black");
+  drawSprites();
+  
+   stroke("black");
   textSize(20);
   fill("black");
+  text("Score: "+ score, 500,40);
   survivalTime = Math.ceil(frameCount/frameRate());
   text("Survival Time : "+ survivalTime,200,50);
-  text("Score: "+ score, 500,40);
-  
-  drawSprites();
 }
 function spawnObstacles(){
  if (frameCount % 150 === 0){
